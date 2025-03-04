@@ -22,6 +22,6 @@ WORKDIR /app
 COPY ./start.sh ./
 COPY ./rs-init.sh ./
 
-ENTRYPOINT ["bash", "/scripts/start.sh"]
+ENTRYPOINT ["bash", "/app/start.sh"]
 
 CMD ["sh", "-c", "exec /usr/bin/mongod --bind_ip_all --port ${MONGO_PORT} --replSet \"${MONGO_REPLICA_SET_NAME}\" --auth --keyFile \"${MONGO_KEY_FILE_TARGET_PATH}\""]
